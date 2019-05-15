@@ -6,14 +6,32 @@
     </div>
     <div class="card-body">
       <div class="col-md-6">
-        <form method="post" class="list-group-horizontal-sm" action="">
+        <!-- <form method="post" [formGroup]="editCategoryForm" (ngSubmit)="onSubmit()" class="list-group-horizontal-sm"
+               action="">
+           <div class="form-group">
+             <label for="Category" class="control-label">Category</label>
+             <input type="text" formControlName="wcate" class="form-control input-sm" name="Category" id="Category"/>
+           </div>
+           <div class="form-group">
+             <div class="float-right">
+               <input type="submit" class="btn btn-success btn-sm"/>
+               <input type="reset" class="btn btn-warning btn-sm"/>
+             </div>
+           </div>
+         </form>-->
+
+        <form method="post" autocomplete="off" #form="ngForm" (ngSubmit)="onSubmit(form)"
+              class="list-group-horizontal-sm"
+              action="">
           <div class="form-group">
-            <label for="Category" class="control-label">Category</label>
-            <input type="text" class="form-control input-sm" name="Category"/>
+            <label for="wcate" class="control-label">Category</label>
+            <input type="text" required="required" #wcate="ngModel" [(ngModel)]="cWise.wCateformData.wcate"
+                   class="form-control input-sm" name="wcate" id="wcate"/>
+            <div class="validation-error" *ngIf="wcate.invalid">This Field is Required</div>
           </div>
           <div class="form-group">
             <div class="float-right">
-              <input type="submit" class="btn btn-success btn-sm"/>
+              <input type="submit" [disabled]="form.invalid" class="btn btn-success btn-sm"/>
               <input type="reset" class="btn btn-warning btn-sm"/>
             </div>
           </div>
