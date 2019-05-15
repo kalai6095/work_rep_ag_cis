@@ -6,7 +6,7 @@
     </div>
     <div class="card-body">
       <div class="col-md-6">
-        <form method="post" class="list-group-horizontal-sm" action="">
+        <form method="post" [formGroup]="editCForm" (ngSubmit)="onSubmitCForm()" class="list-group-horizontal-sm" action="">
           <div class="form-group">
             <label for="Category" class="control-label">Category</label>
             <input type="text" readonly name="Category" class="form-control input-sm" value="C"/>

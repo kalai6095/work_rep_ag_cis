@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {WcateComponent} from './wcate/wcate.component';
@@ -16,6 +16,7 @@ import {CWiseComponent} from './c-wise/c-wise.component';
 import {FWiseComponent} from './f-wise/f-wise.component';
 import {EWiseComponent} from './e-wise/e-wise.component';
 import {FooterComponent} from './footer/footer.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,10 @@ import {FooterComponent} from './footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

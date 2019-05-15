@@ -1,5 +1,5 @@
 <div class="col-md-12">
-  <form action="">
+  <form action="" [formGroup]="editWorkForm" (ngSubmit)="onSubmit()">
 
     <div class="col-md-12">
       <label for="Category">Category</label>
