@@ -6,31 +6,35 @@
     </div>
     <div class="card-body">
       <div class="col-md-6">
-        <form method="post" [formGroup]="editCForm" (ngSubmit)="onSubmitCForm()" class="list-group-horizontal-sm" action="">
+        <form method="post" #form="ngForm" (ngSubmit)="onSubmitCForm(form)" class="list-group-horizontal-sm" action="">
           <div class="form-group">
             <label for="Category" class="control-label">Category</label>
-            <input type="text" readonly name="Category" class="form-control input-sm" value="C"/>
+            <input type="text" readonly name="Category" #category="ngModel" [(ngModel)]="cWise.add_cformData.category"
+                   class="form-control input-sm" value="C"/>
           </div>
 
           <div class="form-group">
             <label for="ID">ID</label>
-            <input type="text" name="ID" class="form-control">
+            <input type="text" name="ID" #Id="ngModel" [(ngModel)]="cWise.add_cformData.Id" class="form-control">
           </div>
           <div class="form-group">
             <label for="Description">Description</label>
-            <textarea name="Description" class="form-control"></textarea>
+            <textarea name="Description" #description="ngModel" [(ngModel)]="cWise.add_cformData.description"
+                      class="form-control"></textarea>
           </div>
           <div class="form-group">
             <label for="Eng">Eng</label>
-            <input type="text" name="Eng" class="form-control">
+            <input type="text" name="Eng" #eng="ngModel" [(ngModel)]="cWise.add_cformData.eng" class="form-control">
           </div>
           <div class="form-group">
             <label for="no_of_commit">No of Commits.</label>
-            <input type="number" min="1" max="150" name="no_of_commits" class="form-control">
+            <input type="number" min="1" max="150" #no_of_commits="ngModel"
+                   [(ngModel)]="cWise.add_cformData.no_of_commits" name="no_of_commits" class="form-control">
           </div>
           <div class="form-group">
             <label for="pull_link">Is Converted into C.</label>
-            <input type="text" name="pull_link" class="form-control">
+            <input type="text" name="pull_link" #is_converted="ngModel" [(ngModel)]="cWise.add_cformData.is_converted"
+                   class="form-control">
           </div>
 
           <div class="form-group">
