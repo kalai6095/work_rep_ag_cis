@@ -25,4 +25,8 @@ export class CwiseService {
   getwcate() {
     return this.http.get(this.base + 'report/wcate');
   }
+
+  insertCForm(add_cformData: Cform) {
+    return this.http.post(this.base + 'insert/addc', add_cformData);
+  }
 }

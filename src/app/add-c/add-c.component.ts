@@ -10,11 +10,21 @@ import {CwiseService} from '../services/cwise.service';
 })
 export class AddCComponent implements OnInit {
 
+  categorys: any = [];
+
   constructor(private router: Router, private formBuilder: FormBuilder, private cWise: CwiseService) {
   }
 
   ngOnInit() {
     this.resetCForm();
+    this.loadWcate();
+  }
+
+  loadWcate() {
+    this.cWise.getwcate().subscribe(e => {
+      console.log(e);
+      this.categorys = e;
+    });
   }
 
   resetCForm(form?: NgForm) {
@@ -23,18 +33,30 @@ export class AddCComponent implements OnInit {
     }
 
     this.cWise.add_cformData = {
-      category: 'C',
-      Id: '',
+      cformid: 0,
+      wcate: {
+        wcateId: null,
+        wcate: null
+      },
+      cid: '',
       description: '',
       eng: '',
       no_of_commits: 1,
-      is_converted: ''
-    }
-    ;
+      pull_link: ''
+    };
+
+
   }
 
   onSubmitCForm(form: NgForm) {
-
+    this.insertCForm(form);
   }
 
+
+  private insertCForm(form: NgForm) {
+    console.log(form.value);
+    this.cWise.insertCForm(form.value).subscribe(e => {
+      //this.resetCForm(form);
+    });
+  }
 }

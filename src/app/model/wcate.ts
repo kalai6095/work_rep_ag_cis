@@ -1,4 +1,4 @@
 export class Wcate {
-  wcateId: string;
+  wcateId: number;
   wcate: string;
 }
