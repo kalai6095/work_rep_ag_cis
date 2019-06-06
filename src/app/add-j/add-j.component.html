@@ -6,23 +6,27 @@
     </div>
     <div class="card-body">
       <div class="col-md-6">
-        <form method="post" autocomplete="off" #form="ngForm" (ngSubmit)="onSubmit()" class="list-group-horizontal-sm" action="">
+        <form method="post" autocomplete="off" #form="ngForm" (ngSubmit)="onSubmitJForm(form)" class="list-group-horizontal-sm" action="">
           <div class="form-group">
-            <label for="Category" class="control-label">Category</label>
-            <input type="text" readonly name="wcate" #wcate="ngModel" [(ngModel)]="addjService.add_jformData.wcate" class="form-control input-sm" value="J"/>
-          </div>
+            <label for="wcate" class="control-label">Category</label>
 
-          <div class="form-group">
-            <label for="ID">ID</label>
-            <input type="text" name="jid" #jid="ngModel" [(ngModel)]="addjService.add_jformData.jid" class="form-control">
+            <select name="wcate" id="wcate" #wcate="ngModel" [(ngModel)]="addjService.add_jformData.wcate"
+                    class="form-control input-sm">
+              <option value="">-Select-</option>
+              <option *ngFor="let c of categorys" value="{{c.wcateId}}">{{c.wcate}}</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="Description">Description</label>
-            <textarea name="description" #description="ngModel" [(ngModel)]="addjService.add_jformData.description" class="form-control"></textarea>
+            <label for="jid">ID</label>
+            <input type="text" name="jid" id="jid" #jid="ngModel" [(ngModel)]="addjService.add_jformData.jid" class="form-control">
           </div>
           <div class="form-group">
-            <label for="Eng">Eng</label>
-            <input type="text" name="eng" #eng="ngModel" [(ngModel)]="addjService.add_jformData.eng" class="form-control">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" #description="ngModel" [(ngModel)]="addjService.add_jformData.description" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="eng">Eng</label>
+            <input type="text" name="eng" id="eng" #eng="ngModel" [(ngModel)]="addjService.add_jformData.eng" class="form-control">
           </div>
           <div class="form-group">
             <label for="isConverted">Is Converted into C.</label>
@@ -42,8 +46,8 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="Cid">C ID</label>
-            <input type="text" name="c_id" #c_id="ngModel" [(ngModel)]="addjService.add_jformData.c_id" class="form-control">
+            <label for="c_id">C ID</label>
+            <input type="text" name="c_id" id="c_id" #c_id="ngModel" [(ngModel)]="addjService.add_jformData.c_id" class="form-control">
           </div>
           <div class="form-group">
             <label for="e_comments">E Comments</label>

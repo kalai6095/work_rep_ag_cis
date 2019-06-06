@@ -56,7 +56,7 @@ export class AddCComponent implements OnInit {
   private insertCForm(form: NgForm) {
     console.log(form.value);
     this.cWise.insertCForm(form.value).subscribe(e => {
-      //this.resetCForm(form);
+      this.resetCForm(form);
     });
   }
 }

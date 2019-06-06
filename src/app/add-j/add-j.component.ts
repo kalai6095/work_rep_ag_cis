@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, NgForm} from '@angular/forms';
 import {AddjService} from '../services/addj.service';
 import {Router} from '@angular/router';
+import {CwiseService} from '../services/cwise.service';
 
 @Component({
   selector: 'app-add-j',
@@ -9,15 +10,24 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-j.component.css']
 })
 export class AddJComponent implements OnInit {
+  categorys: any = [];
 
-  constructor(private addjService: AddjService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(private addjService: AddjService, private router: Router, private formBuilder: FormBuilder, private cWise: CwiseService) {
   }
 
   ngOnInit() {
-    this.resetForm();
+    this.resetJForm();
+    this.loadWcate();
   }
 
-  resetForm(form?: NgForm) {
+  loadWcate() {
+    this.cWise.getwcate().subscribe(e => {
+      console.log(e);
+      this.categorys = e;
+    });
+  }
+
+  resetJForm(form?: NgForm) {
     if (form != null) {
       form.resetForm();
     }
@@ -36,4 +46,14 @@ export class AddJComponent implements OnInit {
     };
   }
 
+  onSubmitJForm(form: NgForm) {
+    this.insertJForm(form);
+  }
+
+  private insertJForm(form: NgForm) {
+    console.log(form.value);
+    this.addjService.insertCForm(form.value).subscribe(e => {
+      this.resetJForm(form);
+    });
+  }
 }

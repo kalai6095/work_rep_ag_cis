@@ -1,21 +1,21 @@
 import {Injectable} from '@angular/core';
-import {Jform} from '../model/jform';
+import {Fform} from '../model/fform';
 import {Cform} from '../model/cform';
-import {HttpClient} from '@angular/common/http';
 import {ConfigService} from '../config.service';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AddjService {
-  add_jformData: Jform;
+export class FwiseService {
+  add_fformData: Fform;
   base: string;
 
   constructor(private configService: ConfigService, private http: HttpClient) {
     this.base = this.configService.baseUrl;
   }
 
-  insertCForm(add_jformData: Cform) {
-    return this.http.post(this.base + 'insert/addj', add_jformData);
+  insertFForm(add_fformData: Cform) {
+    return this.http.post(this.base + 'insert/addf', add_fformData);
   }
 }
