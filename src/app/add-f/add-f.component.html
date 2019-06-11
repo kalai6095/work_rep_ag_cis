@@ -10,6 +10,7 @@
               action="">
           <div class="form-group">
             <label for="wcate" class="control-label">Category</label>
+            <input type="hidden" name="fformid"  #jformid="ngModel" [(ngModel)]="addfService.add_fformData.fformid">
             <select name="wcate" id="wcate" #wcate="ngModel" [(ngModel)]="addfService.add_fformData.wcate"
                     class="form-control input-sm">
               <option value="">-Select-</option>

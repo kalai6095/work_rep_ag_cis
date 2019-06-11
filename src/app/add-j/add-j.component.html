@@ -9,7 +9,7 @@
         <form method="post" autocomplete="off" #form="ngForm" (ngSubmit)="onSubmitJForm(form)" class="list-group-horizontal-sm" action="">
           <div class="form-group">
             <label for="wcate" class="control-label">Category</label>
-
+            <input type="hidden" name="jformid"  #jformid="ngModel" [(ngModel)]="addjService.add_jformData.jformid">
             <select name="wcate" id="wcate" #wcate="ngModel" [(ngModel)]="addjService.add_jformData.wcate"
                     class="form-control input-sm">
               <option value="">-Select-</option>

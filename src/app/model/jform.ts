@@ -1,7 +1,7 @@
 import {Wcate} from './wcate';
 
 export class Jform {
-  cformid: number;
+  jformid: number;
   wcate: Wcate;
   c_id: string;
   jid: string;

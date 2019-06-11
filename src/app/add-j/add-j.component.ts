@@ -32,7 +32,7 @@ export class AddJComponent implements OnInit {
       form.resetForm();
     }
     this.addjService.add_jformData = {
-      cformid: 0,
+      jformid: 0,
       wcate: {
         wcateId: null,
         wcate: null
