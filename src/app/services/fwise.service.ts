@@ -18,4 +18,7 @@ export class FwiseService {
   insertFForm(add_fformData: Cform) {
     return this.http.post(this.base + 'insert/addf', add_fformData);
   }
+  getFForm() {
+    return this.http.get(this.base + 'page/getf');
+  }
 }

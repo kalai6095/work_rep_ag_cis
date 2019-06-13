@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {CwiseService} from '../services/cwise.service';
 
 @Component({
   selector: 'app-c-wise',
@@ -7,10 +8,21 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CWiseComponent implements OnInit {
 
-  constructor() {
+  cdets: any = [];
+
+  constructor(private cwise: CwiseService) {
   }
 
   ngOnInit() {
+    this.loadcdets();
+  }
+
+  loadcdets() {
+    this.cwise.getCForm().subscribe(e => {
+        console.log(e);
+        this.cdets = e;
+      }
+    );
   }
 
 }

@@ -16,15 +16,17 @@
               <th>Eng</th>
               <th>IsConverted</th>
               <th>E-Comments</th>
+              <th>More</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <tr *ngFor="let j of jiras; let i=index;">
+              <td>{{i+1}}</td>
+              <td>{{j.jid}}</td>
+              <td>{{j.description}}</td>
+              <td>{{j.eng}}</td>
+              <td>{{j.j_is_converted}}</td>
+              <td>NA</td>
               <td></td>
             </tr>
             </tbody>

@@ -16,15 +16,17 @@
               <th>Eng</th>
               <th>pull</th>
               <th>E-Comments</th>
+              <th>Option</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+            <tr *ngFor="let c of cdets; let i = index; let odd = odd">
+              <td>{{i + 1}}</td>
+              <td>{{c.cid}}</td>
+              <td>{{c.description}}</td>
+              <td>{{c.eng}}</td>
+              <td>{{c.pull_link}}</td>
+              <td>NA</td>
               <td></td>
             </tr>
             </tbody>

@@ -14,16 +14,16 @@
               <th>F-ID</th>
               <th>Description</th>
               <th>Eng</th>
-
+              <th>More</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr *ngFor="let f of features; let i=index;">
+              <td>{{i + 1}}</td>
+              <td>{{f.f_id}}</td>
+              <td>{{f.description}}</td>
+              <td>{{f.eng}}</td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-
             </tr>
             </tbody>
           </table>

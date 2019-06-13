@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FwiseService} from '../services/fwise.service';
 
 @Component({
   selector: 'app-f-wise',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./f-wise.component.css']
 })
 export class FWiseComponent implements OnInit {
+  features: any = [];
 
-  constructor() { }
+  constructor(private fservice: FwiseService) {
+  }
 
   ngOnInit() {
+    this.loadfeatures();
+  }
+
+  loadfeatures() {
+    this.fservice.getFForm().subscribe(e => {
+      console.log(e);
+      this.features = e;
+    });
   }
 
 }

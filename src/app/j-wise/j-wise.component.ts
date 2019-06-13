@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AddjService} from '../services/addj.service';
 
 @Component({
   selector: 'app-j-wise',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JWiseComponent implements OnInit {
 
-  constructor() { }
+  jiras: any = [];
 
-  ngOnInit() {
+  constructor(private jservice: AddjService) {
   }
 
+  ngOnInit() {
+    this.loadJiras();
+  }
+
+  loadJiras() {
+    this.jservice.getJForm().subscribe(e => {
+      console.log(e);
+      this.jiras = e;
+    });
+  }
 }

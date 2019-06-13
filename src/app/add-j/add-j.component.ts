@@ -52,7 +52,7 @@ export class AddJComponent implements OnInit {
 
   private insertJForm(form: NgForm) {
     console.log(form.value);
-    this.addjService.insertCForm(form.value).subscribe(e => {
+    this.addjService.insertJForm(form.value).subscribe(e => {
       this.resetJForm(form);
     });
   }

@@ -15,7 +15,12 @@ export class AddjService {
     this.base = this.configService.baseUrl;
   }
 
-  insertCForm(add_jformData: Cform) {
+  insertJForm(add_jformData: Cform) {
     return this.http.post(this.base + 'insert/addj', add_jformData);
   }
+
+  getJForm() {
+    return this.http.get(this.base + 'page/getj');
+  }
+
 }

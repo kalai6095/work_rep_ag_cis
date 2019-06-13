@@ -29,4 +29,8 @@ export class CwiseService {
   insertCForm(add_cformData: Cform) {
     return this.http.post(this.base + 'insert/addc', add_cformData);
   }
+
+  getCForm() {
+    return this.http.get(this.base + 'page/getc');
+  }
 }
