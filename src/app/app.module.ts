@@ -17,6 +17,7 @@ import {FWiseComponent} from './f-wise/f-wise.component';
 import {EWiseComponent} from './e-wise/e-wise.component';
 import {FooterComponent} from './footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule, AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
