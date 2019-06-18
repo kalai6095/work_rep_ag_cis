@@ -28,3 +28,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 Ref:https://www.devglan.com/angular/angular-7-crud-example
+
+###Docker build 
+
+   build: `docker build -t work_rep .`
+
+   run: `docker run --name work_rep_running -d -p 4200:4200 --rm work_rep`
+
+   logs: `tail -f docker logs work_rep_running`
+
+   bash: `docker exec -it work_rep_running /bin/bash`
