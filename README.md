@@ -1,5 +1,6 @@
 # WorkRep
-
+#
+npm install -g @angular/cli@7.2.3
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
 
 ## Development server
@@ -29,7 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Ref:https://www.devglan.com/angular/angular-7-crud-example
 
-###Docker build 
+###Docker build
 
    build: `docker build -t work_rep .`
 
