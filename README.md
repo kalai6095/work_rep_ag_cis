@@ -30,6 +30,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Ref:https://www.devglan.com/angular/angular-7-crud-example
 
+protractor
+
+`npm i -g protractor`
+
+`webdriver-manager update`
+
+`webdriver-manager start`
+
+webbrow
+
 ###Docker build
 
    build: `docker build -t work_rep .`
@@ -39,3 +49,6 @@ Ref:https://www.devglan.com/angular/angular-7-crud-example
    logs: `tail -f docker logs work_rep_running`
 
    bash: `docker exec -it work_rep_running /bin/bash`
+
+
+
